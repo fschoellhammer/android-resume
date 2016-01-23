@@ -10,6 +10,8 @@
     <string name="loc_japan">Japan</string>
     <string name="loc_china">China</string>
     <string name="loc_austria">Austria</string>
+    <string name="major_master">Master of Science (MSc.)</string>
+    <string name="major_bachelor">Bachelor of Science (BSc.)</string>
 
     <string name="format_date_range">%1$s - %2$s</string>
     <string name="format_yearmonth">MMM yyyy</string>

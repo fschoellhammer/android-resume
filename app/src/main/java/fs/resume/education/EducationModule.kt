@@ -25,24 +25,30 @@ class EducationModule {
                     Education(
                             institution = getString(R.string.edu_tu),
                             description = "Media Informatics",
+                            major = getString(R.string.major_bachelor),
+                            location = getString(R.string.loc_austria),
                             from = date(2003, 9),
                             to = date(2006, 7),
                             icon = R.drawable.ic_tu),
                     Education(
                             institution = getString(R.string.edu_waseda),
                             description = "Intensive Japanese Language Program",
+                            location = getString(R.string.loc_japan),
                             from = date(2006, 9),
                             to = date(2007, 7),
                             icon = R.drawable.ic_waseda),
                     Education(
                             institution = getString(R.string.edu_tu),
                             description = "Software Engineering &amp; Internet Computing",
+                            major = getString(R.string.major_master),
+                            location = getString(R.string.loc_austria),
                             from = date(2007, 9),
                             to = date(2009, 7),
                             icon = R.drawable.ic_tu),
                     Education(
                             institution = getString(R.string.edu_southeast),
                             description = "Intensive Chinese Language Program",
+                            location = getString(R.string.loc_china),
                             from = date(2009, 9),
                             to = date(2010, 7),
                             icon = R.drawable.ic_southeast)

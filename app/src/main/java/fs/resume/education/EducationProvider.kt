@@ -18,6 +18,8 @@ interface EducationProvider {
 data class Education (
     val institution : String,
     val description : String,
+    val major : String = "",
+    val location : String,
 
     val from : LocalDate,
     val to : LocalDate,
