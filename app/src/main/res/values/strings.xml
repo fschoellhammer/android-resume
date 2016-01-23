@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Resume</string>
+
+
+    <string name="edu_tu">Vienna University of Technology</string>
+    <string name="edu_uni_wien">University of Vienna</string>
+    <string name="edu_waseda">Waseda University</string>
+    <string name="edu_southeast">Southeast University</string>
+
+    <string name="loc_japan">Japan</string>
+    <string name="loc_china">China</string>
+    <string name="loc_austria">Austria</string>
+
+    <string name="format_date_range">%1$s - %2$s</string>
+    <string name="format_yearmonth">MMM yyyy</string>
 </resources>

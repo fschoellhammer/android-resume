@@ -2,16 +2,9 @@
 buildscript {
     repositories {
         mavenCentral()
-        maven {
-            url 'http://oss.sonatype.org/content/repositories/snapshots'
-        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
-
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.0+'
-
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 
