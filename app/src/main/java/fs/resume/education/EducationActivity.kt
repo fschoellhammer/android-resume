@@ -7,15 +7,18 @@ import dagger.Component
 import fs.resume.App
 import fs.resume.AppComponent
 import fs.resume.R
+import fs.resume.util.BaseDrawerActivity
 import fs.resume.util.PerActivity
-import kotlinx.android.synthetic.main.education_layout.*
+import kotlinx.android.synthetic.main.education_activity.*
 import javax.inject.Inject
 
 
-class EducationActivity : AppCompatActivity() {
+class EducationActivity : BaseDrawerActivity() {
 
     @Inject
     lateinit var educationProvider : EducationProvider
+
+    override val selectedMenuId = R.id.menu_education
 
     @PerActivity
     @Component(dependencies = arrayOf(AppComponent::class), modules = arrayOf(EducationModule::class))
@@ -32,7 +35,7 @@ class EducationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.education_layout)
+        setContentView(R.layout.education_activity)
         recycler.adapter = EducationListAdapter(this, educationProvider.getEducation())
         recycler.layoutManager = LinearLayoutManager(this)
     }

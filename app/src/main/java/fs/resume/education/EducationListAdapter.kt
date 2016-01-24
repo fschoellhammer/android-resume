@@ -43,7 +43,7 @@ class EducationListAdapter(val ctx : Context, val items : List<Education>) : Rec
             itemView.date.text = ctx.getString(R.string.format_date_range, format.format(item.from), format.format(item.to))
             itemView.icon.setImageResource(item.icon)
             for (tv in arrayOf(itemView.major, itemView.location, itemView.date)) {
-                tv.setCompoundDrawableTint(ctx.getColor(R.color.textColorHint))
+                tv.setCompoundDrawableTint(ctx.resources.getColor(R.color.textColorHint))
             }
         }
     }

@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Resume</string>
+    <string name="me">Florian Schoellhammer</string>
 
 
     <string name="edu_tu">Vienna University of Technology</string>
@@ -15,4 +16,7 @@
 
     <string name="format_date_range">%1$s - %2$s</string>
     <string name="format_yearmonth">MMM yyyy</string>
+
+    <string name="education">Education</string>
+    <string name="timeline">Timeline</string>
 </resources>

@@ -1,6 +1,14 @@
 package fs.resume.util
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.Drawable
+import android.os.Handler
+import android.os.Looper
+import android.support.annotation.ColorInt
+import android.support.annotation.ColorRes
+import android.support.annotation.DrawableRes
 import android.support.annotation.LayoutRes
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.Log
@@ -22,13 +30,34 @@ var View.visible: Boolean
     set(show) { visibility = if (show) View.VISIBLE else View.GONE }
 
 /** tint all compounds of a [TextView] with the given color **/
-fun TextView.setCompoundDrawableTint(color : Int) {
+fun TextView.setCompoundDrawableTint(@ColorInt color : Int) {
     compoundDrawablesRelative.filterNotNull().forEach { it.setCompatTint(color) }
 }
 
 /** tint a drawable using [DrawableCompat] **/
-fun Drawable.setCompatTint(color : Int) : Drawable {
+fun Drawable.setCompatTint(@ColorInt color : Int) : Drawable {
     DrawableCompat.wrap(this)
     DrawableCompat.setTint(this, color)
     return this
+}
+
+/** get a tinted drawable **/
+fun Context.getDrawableWithTint(@DrawableRes drawableResId : Int, @ColorRes colorRes : Int) : Drawable {
+    return getDrawable(drawableResId).setCompatTint(resources.getColor(colorRes))
+}
+
+/** launch intent with activity **/
+fun Intent.startActivity(activity : Activity) = activity.startActivity(this)
+
+fun Any.runOnUi(delay : Long = 0, runnable : () -> Unit ) {
+    Handler(Looper.getMainLooper()).apply {
+        if (delay != 0L) postDelayed(toRunnable(runnable), delay)
+        else post(toRunnable(runnable))
+    }
+}
+
+private fun toRunnable(runnable : () -> Unit) : Runnable {
+    return object : Runnable {
+        override fun run() : Unit = runnable()
+    }
 }
