@@ -43,7 +43,7 @@ fun Drawable.setCompatTint(@ColorInt color : Int) : Drawable {
 
 /** get a tinted drawable **/
 fun Context.getDrawableWithTint(@DrawableRes drawableResId : Int, @ColorRes colorRes : Int) : Drawable {
-    return getDrawable(drawableResId).setCompatTint(resources.getColor(colorRes))
+    return resources.getDrawable(drawableResId).setCompatTint(resources.getColor(colorRes))
 }
 
 /** launch intent with activity **/
